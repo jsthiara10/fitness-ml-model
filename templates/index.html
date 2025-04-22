@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calorie Predictor</title>
+</head>
+<body>
+    <h2>Enter your details</h2>
+    <form method="POST">
+        <label>Name: <input type="text" name="name" required></label><br>
+        <label>Weight (kg): <input type="number" name="weight" step="0.1" required></label><br>
+        <label>Height (cm): <input type="number" name="height" required></label><br>
+        <label>Age: <input type="number" name="age" required></label><br>
+        <label>Gender:
+            <select name="gender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+        </label><br>
+        <label>Activity Level:
+            <select name="activity">
+                <option value="sedentary">Sedentary</option>
+                <option value="light">Light</option>
+                <option value="moderate">Moderate</option>
+                <option value="active">Active</option>
+            </select>
+        </label><br>
+        <label>Goal:
+            <select name="goal">
+                <option value="bulk">Bulk</option>
+                <option value="cut">Cut</option>
+                <option value="maintain">Maintain</option>
+            </select>
+        </label><br>
+
+        <h3>Enter weekly calorie intake:</h3>
+        {% for day in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'] %}
+            <label>{{ day }}: <input type="number" name="{{ day.lower() }}" required></label><br>
+        {% endfor %}
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

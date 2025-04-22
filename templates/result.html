@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Fitness Report</title>
+</head>
+<body>
+    <h2>Hi {{ name }}! Here's your personalized report</h2>
+
+    <p><strong>Daily Calorie Target:</strong> {{ tdee }} kcal</p>
+    <p><strong>Protein Range:</strong> {{ protein_range }} g/day</p>
+    <p><strong>Predicted Intake Tomorrow:</strong> {{ prediction }} kcal</p>
+
+    <h3>📊 Weekly Feedback:</h3>
+    <ul>
+    {% for day, cal, status in feedback %}
+        <li>{{ day }} – {{ cal }} kcal → {{ status }}</li>
+    {% endfor %}
+    </ul>
+
+    <h3>💡 Smart Tips:</h3>
+    <ul>
+    {% for tip in tips %}
+        <li>{{ tip }}</li>
+    {% endfor %}
+    </ul>
+
+    <a href="/">← Go back</a>
+</body>
+</html>
