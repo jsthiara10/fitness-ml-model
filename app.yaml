@@ -1,8 +1,13 @@
 runtime: python310
-entrypoint: gunicorn -b :$PORT app:calorie_predictor.py
+
+entrypoint: gunicorn -b :$PORT calorie_predictor:app
 
 env_variables:
   FLASK_ENV: production
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 2
 
 handlers:
 - url: /static
@@ -10,4 +15,3 @@ handlers:
 
 - url: /.*
   script: auto
-
