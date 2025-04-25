@@ -1,0 +1,13 @@
+runtime: python310
+entrypoint: gunicorn -b :$PORT app:calorie_predictor.py
+
+env_variables:
+  FLASK_ENV: production
+
+handlers:
+- url: /static
+  static_dir: static/
+
+- url: /.*
+  script: auto
+
