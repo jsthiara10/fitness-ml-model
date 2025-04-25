@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Your Fitness Report</title>
-</head>
+<head><title>Fitness Report</title></head>
 <body>
-    <h2>Hi {{ name }}! Here's your personalized report</h2>
-
+    <h2>Hi {{ name }}! Here's your personalized report:</h2>
     <p><strong>Daily Calorie Target:</strong> {{ tdee }} kcal</p>
     <p><strong>Protein Range:</strong> {{ protein_range }} g/day</p>
     <p><strong>Predicted Intake Tomorrow:</strong> {{ prediction }} kcal</p>
@@ -24,6 +21,6 @@
     {% endfor %}
     </ul>
 
-    <a href="/">← Go back</a>
+    <a href="/">← Start Over</a>
 </body>
 </html>
