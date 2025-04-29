@@ -33,7 +33,7 @@ git clone https://github.com/yourusername/fitness-calorie-predictor.git
 cd fitness-calorie-predictor
 ```
 
-2. Create a virtual environment
+### 2. Create a virtual environment
 ```bash
 Copy
 Edit
