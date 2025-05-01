@@ -1,7 +1,25 @@
 runtime: python310
+env: standard
+instance_class: F1
 
 entrypoint: gunicorn -b :$PORT calorie_predictor:app
 
 handlers:
+  - url: /static/(.*)
+    static_files: static/\1
+    upload: static/.*
   - url: /.*
     script: auto
+
+env_variables:
+  FLASK_ENV: production
+
+automatic_scaling:
+  min_idle_instances: 1
+  max_idle_instances: 2
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+  min_instances: 1
+  max_instances: 2
+
+service_account: utilitarian-web-457114-m1@appspot.gserviceaccount.com
