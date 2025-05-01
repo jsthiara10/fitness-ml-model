@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head><title>Calorie Predictor - Start</title></head>
+<head>
+    <title>Calorie Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <h2>Step 1: Enter your personal details</h2>
+<div class="container">
+    <h2>Start Your Fitness Journey</h2>
     <form method="POST">
-        <label>Name: <input type="text" name="name" required></label><br>
-        <label>Weight (kg): <input type="number" name="weight" step="0.1" required></label><br>
-        <label>Height (cm): <input type="number" name="height" required></label><br>
-        <label>Age: <input type="number" name="age" required></label><br>
+        <label>Name: <input type="text" name="name" required></label>
+        <label>Weight (kg): <input type="number" name="weight" step="0.1" required></label>
+        <label>Height (cm): <input type="number" name="height" required></label>
+        <label>Age: <input type="number" name="age" required></label>
         <label>Gender:
             <select name="gender">
                 <option value="M">Male</option>
                 <option value="F">Female</option>
             </select>
-        </label><br>
+        </label>
         <label>Activity Level:
             <select name="activity">
                 <option value="sedentary">Sedentary</option>
@@ -21,24 +25,17 @@
                 <option value="moderate">Moderate</option>
                 <option value="active">Active</option>
             </select>
-        </label><br>
+        </label>
         <label>Goal:
             <select name="goal">
                 <option value="bulk">Bulk</option>
                 <option value="cut">Cut</option>
                 <option value="maintain">Maintain</option>
             </select>
-        </label><br>
-        <div style="margin-top: 10px; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-    <strong>What do these mean?</strong>
-    <ul style="margin-top: 5px;">
-        <li><strong>Bulk:</strong> Eating more calories than you burn to gain muscle and size. Great if you're trying to build strength or mass.</li>
-        <li><strong>Cut:</strong> Eating fewer calories than you burn to lose fat while maintaining muscle. Ideal for trimming down.</li>
-        <li><strong>Maintain:</strong> Eating around your Total Daily Energy Expenditure (TDEE) to stay at your current weight.</li>
-    </ul>
-</div>
+        </label>
 
-        <button type="submit">Next →</button>
+        <button type="submit">Continue</button>
     </form>
+</div>
 </body>
 </html>

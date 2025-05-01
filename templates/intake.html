@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><title>Calorie Intake</title></head>
+<head>
+    <title>Log Your Calorie Intake</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <h2>Step 2: Enter your weekly calories</h2>
-    <p><strong>Your daily calorie target is:</strong> {{ tdee }} kcal</p>
+<div class="container">
+    <h2>Log Your Weekly Calories</h2>
+    <p style="text-align:center;">Your daily target: <strong>{{ tdee }} kcal</strong></p>
     <form method="POST">
         {% for day in ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'] %}
-            <label>{{ day }}: <input type="number" name="{{ day.lower() }}" required></label><br>
+            <label>{{ day }}: <input type="number" name="{{ day.lower() }}" required></label>
         {% endfor %}
-        <button type="submit">See My Results →</button>
+        <button type="submit">Submit</button>
     </form>
+</div>
 </body>
 </html>
