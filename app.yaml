@@ -1,0 +1,7 @@
+runtime: python310
+
+entrypoint: gunicorn -b :$PORT calorie_predictor:app
+
+handlers:
+  - url: /.*
+    script: auto
