@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head><title>Fitness Report</title></head>
+<head>
+    <title>Your Fitness Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <h2>Hi {{ name }}! Here's your personalized report:</h2>
+<div class="container">
+    <h2>Hi {{ name }}! Here's your report</h2>
+
     <p><strong>Daily Calorie Target:</strong> {{ tdee }} kcal</p>
     <p><strong>Protein Range:</strong> {{ protein_range }} g/day</p>
     <p><strong>Predicted Intake Tomorrow:</strong> {{ prediction }} kcal</p>
@@ -21,6 +26,8 @@
     {% endfor %}
     </ul>
 
-    <a href="/">← Start Over</a>
+    <a href="/"><button>← Start Again</button></a>
+</div>
 </body>
 </html>
+
